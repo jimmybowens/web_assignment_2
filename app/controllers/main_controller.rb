@@ -4,13 +4,17 @@ class MainController < ApplicationController
   end
 
   def create_customer
-      @customer = Customer.new
-      respond_with(@customer)
+      
   end
 
   def create_manager
+      
   end
 
   def create_employee
+  end
+  
+  def customer_params
+      params.require(:customer).permit(:name, :email, :reports_to, :dept)
   end
 end
